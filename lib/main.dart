@@ -44,6 +44,10 @@ class CounterPage extends StatelessWidget {
               FloatingActionButton(
                 onPressed: () {
                   context.read<CounterBloc>().add(CounterIncremented());
+                  // If this was a Cubit,
+                  // `context.read<CounterCubit>().decrement(),`
+                  // When using the Cubit the event `CounterIncremented` and `add` function could be avoided
+                  // a function can be directly called to change the state
                 },
                 child: const Icon(Icons.add),
               ),
